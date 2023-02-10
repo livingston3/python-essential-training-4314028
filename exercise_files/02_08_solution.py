@@ -68,8 +68,6 @@ class TerminalScribe:
             self.up()
             i = i + 1
 
-
-
     def draw(self, pos):
         self.canvas.setPos(self.pos, self.trail)
         self.pos = pos

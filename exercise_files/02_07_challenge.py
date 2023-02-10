@@ -70,6 +70,20 @@ class TerminalScribe:
         if not self.canvas.hitsWall(pos):
             self.draw(pos)
 
+    def drawSquare(self, side):
+        r, d, l, u = side, side, side, side
+        while r > 0:
+            self.right()
+            r = r - 1
+        while d > 0:
+            self.down()
+            d = d - 1
+        while l > 0:
+            self.left()
+            l = l - 1
+        while u > 0:
+            self.up()
+            u = u - 1
 
 
 # Create a new Canvas instance that is 30 units wide by 30 units tall 
@@ -79,17 +93,4 @@ canvas = Canvas(30, 30)
 scribe = TerminalScribe(canvas)
 
 # Draw a small square
-scribe.right()
-scribe.right()
-scribe.right()
-scribe.down()
-scribe.down()
-scribe.down()
-scribe.left()
-scribe.left()
-scribe.left()
-scribe.up()
-scribe.up()
-scribe.up()
-
-
+scribe.drawSquare(20)
